@@ -1,0 +1,91 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+li {
+	list-style: none;
+}
+
+.multi-select {
+	width: 30rem;
+	height: 2.7em;
+	position: relative;
+}
+
+.multi-select-input {
+	width: 100%;
+	height: 100%;
+	display: flex;
+}
+
+.multi-select-input input {
+	width: 100%;
+	height: 100%;
+	outline: none;
+	padding: 0.5em;
+	border-radius: 0.25em;
+	text-transform: capitalize;
+	border: 2px solid #1e90ff;
+	font-size: clamp(0.8em, 2.5vw, 1.1em);
+}
+
+.multi-select-input input:focus {
+	border-color: #003399;
+}
+
+.suggesstion-list {
+	left: 0;
+	width: 100%;
+	margin-top: 2px;
+	max-height: 201px;
+	position: absolute;
+	overflow-y: scroll;
+	border-radius: 0.125em;
+	top: calc(100% + 0);
+	display: none;
+}
+
+.suggesstion-list.active {
+	display: block;
+	border: 1px solid #00bfff;
+}
+
+.suggesstion-list::-webkit-scrollbar {
+	display: none;
+}
+
+[data-list-item] {
+	width: 100%;
+	padding: 0.5em;
+	cursor: pointer;
+	font-weight: 600;
+	line-height: 1.4em;
+	text-transform: capitalize;
+	border: 1px solid rgb(238, 238, 238);
+}
+
+[data-list-item]:hover {
+	color: white;
+	background-color: #1f75fe;
+}
+
+.overlay {
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: 100vw;
+	position: fixed;
+	z-index: -1;
+	/* background-color: #aaa; */
+}
