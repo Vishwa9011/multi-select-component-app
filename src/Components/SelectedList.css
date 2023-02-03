@@ -7,20 +7,22 @@
 	min-height: 2.7rem;
 	margin-bottom: 2em;
 	border-radius: 0.25em;
-	border: 2px solid #007FFF;
+	border: 2px solid #007fff;
 }
 
 .selected-item {
 	gap: 0.5em;
+	color: #111;
 	display: flex;
 	padding: 0.25em;
+	font-weight: 600;
 	align-items: center;
 	border-radius: 0.2em;
 	border: 1px solid gray;
 	text-transform: capitalize;
 }
 
-.prevent-select{
+.prevent-select {
 	user-select: none;
 }
 
@@ -37,8 +39,8 @@
 	padding: 0.125em;
 	border-radius: 0.25em;
 	max-height: fit-content;
-	background-color: #1E90FF;
-	outline-offset: -1px solid #1E90FF;
+	background-color: #1e90ff;
+	outline-offset: -1px solid #1e90ff;
 	transition: outline-offset 250ms ease;
 }
 
@@ -46,7 +48,7 @@
 	outline-offset: 1px;
 }
 
-.focus-li{
+.focus-li {
 	color: white;
-     background-color: #1F75FE;
+	background-color: #1f75fe;
 }

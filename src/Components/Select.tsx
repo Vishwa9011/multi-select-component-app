@@ -7,7 +7,7 @@ type Props = {
 }
 
 const Select = ({ suggesstions, updateList }: Props) => {
-     const listRef = useRef<HTMLUListElement>(null);
+     const listRef = useRef<any>(null);
      const containerRef = useRef<HTMLDivElement>(null);
      const [showList, setShowlist] = useState(false);
      const [text, setText] = useState<string>('');

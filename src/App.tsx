@@ -2,13 +2,10 @@ import * as React from 'react';
 import './App.css'
 import Select from './Components/Select';
 import SelectedList from './Components/SelectedList';
-
-
-const suggesstions: string[] = ["Karan", "Vishwa Vivek yadav", "Atanu", "Abhishek", "Karan", "Vishwa Vivek yadav", "Atanu", "Abhishek"]
+import { Country } from './CountryNames';
 
 function App() {
     const [selectedItems, setSelectedItems] = React.useState<string[]>([]);
-
     const updateList = (value: string) => {
         if (selectedItems.includes(value)) return;
         setSelectedItems(p => ([...p, value]))
@@ -28,7 +25,7 @@ function App() {
             </header>
             <main className='main-container'>
                 <SelectedList deleteItem={deleteItem} selectedItems={selectedItems} />
-                <Select suggesstions={suggesstions} updateList={updateList} />
+                <Select suggesstions={Country} updateList={updateList} />
             </main>
         </>
     )
