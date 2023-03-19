@@ -27,7 +27,7 @@ export default SelectedList
 
 interface IItem {
      item: string;
-     deleteItem(value: string): void
+     deleteItem(value: string): void;
 }
 
 function SelectedItem({ item, deleteItem }: IItem) {

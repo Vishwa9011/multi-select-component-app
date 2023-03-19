@@ -8,15 +8,15 @@ type Props = {
 
 const Select = ({ suggesstions, updateList }: Props) => {
      const listRef = useRef<any>(null);
-     const containerRef = useRef<HTMLDivElement>(null);
-     const [showList, setShowlist] = useState(false);
      const [text, setText] = useState<string>('');
-     const [listIndex, setListIndex] = useState<number>(-1)
-     const [filterSuggesstion, setFilterSuggesstion] = React.useState<string[]>([])
+     const [showList, setShowlist] = useState(false);
+     const containerRef = useRef<HTMLDivElement>(null);
+     const [listIndex, setListIndex] = useState<number>(-1);
+     const [filterSuggesstion, setFilterSuggesstion] = React.useState<string[]>([]);
 
      const listClick = (e: React.MouseEvent<HTMLLIElement, MouseEvent>, suggesstion: string) => {
           e.stopPropagation();
-          updateList(suggesstion)
+          updateList(suggesstion);
           setShowlist(false)
           setText('')
      }
@@ -24,6 +24,7 @@ const Select = ({ suggesstions, updateList }: Props) => {
      const AddTextInList = (e: React.KeyboardEvent<HTMLInputElement>) => {
           const listText = document.querySelector(".focus-li");
           const listLength = listRef.current?.children.length;
+
           if (e.key === 'ArrowDown') {
                if (!listLength) return;
                if (!showList) setShowlist(true);
@@ -65,7 +66,6 @@ const Select = ({ suggesstions, updateList }: Props) => {
           setFilterSuggesstion([...filterData]);
      }
 
-
      useEffect(() => {
           if (!listRef || listIndex < 0) return;
 
@@ -74,7 +74,6 @@ const Select = ({ suggesstions, updateList }: Props) => {
 
           scrollIntoView(listItems[listIndex].offsetTop)
      }, [listIndex])
-
 
      return (
           <div className='multi-select-container'>

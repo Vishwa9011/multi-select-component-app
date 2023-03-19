@@ -6,6 +6,7 @@ import { Country } from './CountryNames';
 
 function App() {
     const [selectedItems, setSelectedItems] = React.useState<string[]>([]);
+
     const updateList = (value: string) => {
         if (selectedItems.includes(value)) return;
         setSelectedItems(p => ([...p, value]))
